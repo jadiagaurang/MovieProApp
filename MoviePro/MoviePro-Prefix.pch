@@ -1,0 +1,21 @@
+//
+// Prefix header for all source files of the 'MoviePro' target in the 'MoviePro' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+	#import <UIKit/UIKit.h>
+	#import <Foundation/Foundation.h>
+#endif
+
+#define AppName @"MoviePro"
+#define AppDomain @"http://code.gaurangjadia.com"
+
+#define AppFont @"TrebuchetMS"
+#define AppFontBold @"TrebuchetMS-Bold"
+#define AppFontItalic @"TrebuchetMS-Italic"
