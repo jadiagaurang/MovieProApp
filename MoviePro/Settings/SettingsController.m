@@ -96,7 +96,7 @@
 	pvSettings.showsSelectionIndicator = YES;
 	pvSettings.tag = [indexPath row];
 	
-	UIBarButtonItem *btnDone = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarStyleDefault target:self action:@selector(doneClicked:)];
+	UIBarButtonItem *btnDone = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(doneClicked:)];
 	tvSettings.navigationItem.rightBarButtonItem = btnDone;
 	
 	[self.view addSubview:pvSettings];

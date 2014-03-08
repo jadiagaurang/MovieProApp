@@ -13,8 +13,7 @@
 #import "AppHelper.h"
 #import "YouTubeView.h"
 
-@interface VideoGalleryController : UIViewController<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
-{
+@interface VideoGalleryController : UIViewController<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource> {
 	Movie *movie;
 	UITableViewController *tvClips;
 	YouTubeView *youTubeView;

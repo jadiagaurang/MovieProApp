@@ -14,8 +14,15 @@
 #endif
 
 #define AppName @"MoviePro"
-#define AppDomain @"http://code.gaurangjadia.com"
+#define AppDomain @"https://api.movieproapp.com"
+
+#define IS_IPHONE ([[[UIDevice currentDevice] model] isEqualToString:@"iPhone"])
+#define IS_IPOD   ([[[UIDevice currentDevice ] model] isEqualToString:@"iPod touch"])
+#define IS_HEIGHT_GTE_568 [[UIScreen mainScreen ] bounds].size.height >= 568.0f
+#define IS_IPHONE_5 (IS_IPHONE && IS_HEIGHT_GTE_568)
 
 #define AppFont @"TrebuchetMS"
 #define AppFontBold @"TrebuchetMS-Bold"
 #define AppFontItalic @"TrebuchetMS-Italic"
+
+#define AppFlurryKey @"99488Y2YC33CZ3B823QF"

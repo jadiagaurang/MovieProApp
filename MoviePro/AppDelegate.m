@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 California State University, Los Angeles. All rights reserved.
 //
 
+#import "Flurry.h"
 #import "AppDelegate.h"
 
 #import "RootController.h"
@@ -16,6 +17,13 @@
 @synthesize tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	//Init Flurry
+	[Flurry setCrashReportingEnabled:YES];
+     [Flurry startSession:AppFlurryKey];
+	
+	//Get Device Token
+	[[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+	
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
 	//Initialize Tab Bar Controller as root controller
@@ -25,6 +33,15 @@
 	
 	[self.window makeKeyAndVisible];
 	return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+	NSString *dToken = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+	dToken = [dToken stringByReplacingOccurrencesOfString:@" " withString:@""];
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error {
+	NSLog(@"Failed to get token, error: %@", error);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

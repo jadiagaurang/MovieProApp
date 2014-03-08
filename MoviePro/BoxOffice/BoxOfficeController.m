@@ -13,8 +13,7 @@
 @implementation BoxOfficeController
 @synthesize tvMovies;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
 	    [self.view addSubview:[AppHelper getActivityViewer:self.view.frame]];
@@ -39,15 +38,10 @@
 	//Navigation Bar Title
 	tvMovies.title = @"Box Office";
 	
-	if (_refreshHeaderView == nil) {	
-		EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - tvMovies.tableView.bounds.size.height, tvMovies.view.frame.size.width, tvMovies.tableView.bounds.size.height)];
-		view.delegate = self;
-		[tvMovies.tableView addSubview:view];
-		_refreshHeaderView = view;
-	}
-	
-	//  update the last update date
-	[_refreshHeaderView refreshLastUpdatedDate];
+	UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+     //refreshControl.tintColor = [UIColormagentaColor];
+	[refreshControl addTarget:self action:@selector(reloadTableViewDataSource) forControlEvents:UIControlEventValueChanged];
+     tvMovies.refreshControl = refreshControl;
 }
 
 - (void)reload {
@@ -63,9 +57,8 @@
 	[params setObject:@"boxoffice" forKey:@"m"];
 	[params setObject:[AppHelper getPlistData:@"settings" key:@"country"] forKey:@"c"];
 	[params setObject:[AppHelper getPlistData:@"settings" key:@"result"] forKey:@"l"];
-	WebRequest *r = [[WebRequest alloc] initWithURL:@"/moviepro/index.php" parameters:params method:@"POST" delegate:self];
+	WebRequest *r = [[WebRequest alloc] initWithURL:@"/index.php" parameters:params method:@"POST" delegate:self];
 	[r load];
-	//[r loadAsync];
 }
 
 - (void)viewDidLoad {
@@ -103,11 +96,13 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-	MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"movie-%d", indexPath.row]];
+	Movie *objMovie = [arrayMovies objectAtIndex:indexPath.row];
+	MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"boxoffice"];
 	if (cell == nil) {
-		Movie *objMovie = [arrayMovies objectAtIndex:indexPath.row];
-		cell = [[MovieCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:[NSString stringWithFormat:@"movie-%d", indexPath.row] movie:objMovie rowNumber:indexPath.row];
-		
+		cell = [[MovieCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"boxoffice" movie:objMovie rowNumber:indexPath.row];	
+	}
+	else {
+		[cell reload:objMovie rowNumber:indexPath.row];
 	}
 	return cell;
 }
@@ -164,40 +159,29 @@
 #pragma mark Data Source Loading / Reloading Methods
 - (void)reloadTableViewDataSource {
 	_reloading = YES;
+	
+	NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+	[params setObject:@"boxoffice" forKey:@"m"];
+	[params setObject:[AppHelper getPlistData:@"settings" key:@"country"] forKey:@"c"];
+	[params setObject:[AppHelper getPlistData:@"settings" key:@"result"] forKey:@"l"];
+	WebRequest *r = [[WebRequest alloc] initWithURL:@"/index.php" parameters:params method:@"POST" delegate:self];
+	[r load];
 }
 
 - (void)doneLoadingTableViewData{
 	_reloading = NO;
-	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:tvMovies.tableView];
+	[self.tvMovies.refreshControl endRefreshing];
+	//[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:tvMovies.tableView];
 	[tvMovies.tableView reloadData];
 }
 
 #pragma mark UIScrollViewDelegate Methods
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+	//[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
-}
-
-#pragma mark EGORefreshTableHeaderDelegate Methods
-- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view {
-	[self reloadTableViewDataSource];
-	NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-	[params setObject:@"boxoffice" forKey:@"m"];
-	[params setObject:[AppHelper getPlistData:@"settings" key:@"country"] forKey:@"c"];
-	[params setObject:[AppHelper getPlistData:@"settings" key:@"result"] forKey:@"l"];
-	WebRequest *r = [[WebRequest alloc] initWithURL:@"/moviepro/index.php" parameters:params method:@"POST" delegate:self];
-	[r load];
-}
-
-- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view {	
-	return _reloading; // should return if data source model is reloading
-}
-
-- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view {
-	return [NSDate date]; // should return date data source was last changed
+	//[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
 }
 
 #pragma mark - Memory Management

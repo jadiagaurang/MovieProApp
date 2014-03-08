@@ -15,7 +15,7 @@
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
 		movie = m;
-		[self.view addSubview:[AppHelper getActivityViewer:CGRectMake(0, 0, 320, 400)]];
+		[self.view addSubview:[AppHelper getActivityViewer:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)]];
 	}
 	return self;
 }
@@ -26,7 +26,12 @@
 	tvClips.tableView.delegate = self;
 	tvClips.tableView.dataSource = self;
 	
-	self.view = tvClips.view;
+	UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+	tvClips.refreshControl = refreshControl;
+	
+	//self.view = tvClips.view;
+	[self.view addSubview:tvClips.view];
+	[tvClips.tableView setContentInset:UIEdgeInsetsMake(20, 0, 0, 0)];
 }
 
 - (void)loadView {
@@ -35,7 +40,7 @@
 	NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
 	[params setObject:@"clips" forKey:@"m"];
 	[params setObject:movie.imdbid forKey:@"id"];
-	WebRequest *r = [[WebRequest alloc] initWithURL:@"/moviepro/index.php" parameters:params method:@"GET" delegate:self];
+	WebRequest *r = [[WebRequest alloc] initWithURL:@"/index.php" parameters:params method:@"GET" delegate:self];
 	[r load];
 }
 
@@ -80,19 +85,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSMutableDictionary *clip = [movie.clips objectAtIndex:[indexPath row]];
-	youTubeView = [[YouTubeView alloc] initWithHTMLString:[clip objectForKey:@"source"] frame:CGRectMake(0, 0, 320, 400)];
+	youTubeView = [[YouTubeView alloc] initWithHTMLString:[clip objectForKey:@"source"] frame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
 	[self.view addSubview:youTubeView.webView];
 	
-	UIBarButtonItem *btnDone = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarStyleDefault target:self action:@selector(doneClicked:)];
+	UIBarButtonItem *btnDone = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(doneClicked:)];
 	self.navigationItem.rightBarButtonItem = btnDone;
 }
 
 - (void) doneClicked:(id)sender {
 	[UIView animateWithDuration:0.5
 					  delay:0.25
-					options: UIViewAnimationCurveEaseOut 
+					options: UIViewAnimationOptionCurveEaseOut 
 				  animations:^{
-					  youTubeView.webView.frame = CGRectMake(0, 400, 320, 400);
+					  youTubeView.webView.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
 				  } 
 				  completion:^(BOOL finished){
 					  self.navigationItem.rightBarButtonItem = nil;

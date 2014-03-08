@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[VideoGalleryController setupViews]:VideoGalleryController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "tvClips.view">
+            </PersistentString>
+            <PersistentString
+               value = "self.view">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[VideoGalleryController webrequestDidFinishLoading:]:VideoGalleryController.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

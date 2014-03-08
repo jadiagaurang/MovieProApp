@@ -29,4 +29,5 @@
 @property (nonatomic, strong) UIImageView *ivDetailArrow;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier movie:(Movie *)objMovie rowNumber:(NSInteger)rowNumber;
+- (id)reload:(Movie *)objMovie rowNumber:(NSInteger)rowNumber;
 @end

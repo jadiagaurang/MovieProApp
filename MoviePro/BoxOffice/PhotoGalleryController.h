@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+
 #import "Movie.h"
 #import "AppHelper.h"
 #import "WebRequest.h"
@@ -14,8 +16,7 @@
 #import "AppDelegate.h"
 #import "UIImageView+WebCache.h"
 
-@interface PhotoGalleryController : UIViewController<WebRequestDelegate, UIScrollViewDelegate>
-{
+@interface PhotoGalleryController : UIViewController<WebRequestDelegate, UIScrollViewDelegate> {
 	Movie *movie;
 	
 	UIScrollView *vScroll;

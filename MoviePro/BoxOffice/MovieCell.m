@@ -99,6 +99,24 @@
     return self;
 }
 
+- (id)reload:(Movie *)objMovie rowNumber:(NSInteger)rowNumber {
+	if (self) {
+		[self.ivPoster setImageWithURL:[NSURL URLWithString:[objMovie.posters objectAtIndex:0]]
+			     placeholderImage:[UIImage imageNamed:@"MovieCellPlaceholder.png"] success:^(UIImage *image) {
+					//Do something here...
+				}
+				failure:^(NSError *error) {
+					//Do something here...
+				}];
+		
+		self.lTitle.text = [objMovie title];
+		self.lRating.text = [NSString stringWithFormat:@"%@", [objMovie rating]];
+		self.lReleaseDate.text = [NSString stringWithFormat:@"%@", [AppHelper getStringByDate:[objMovie release_dates] formatter:@"MMMM d, y"]];
+		self.lRunTime.text = [NSString stringWithFormat:@"%d Minutes", [objMovie runtime]];
+	}
+	return self;
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
 	[super setSelected:selected animated:animated];
 	// Configure the view for the selected state

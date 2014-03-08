@@ -13,13 +13,10 @@
 #import "AppHelper.h"
 #import "MovieCell.h"
 #import "MovieProfileController.h"
-#import "EGORefreshTableHeaderView.h"
 
-@interface BoxOfficeController : UINavigationController <EGORefreshTableHeaderDelegate, WebRequestDelegate, UITableViewDelegate, UITableViewDataSource>
-{
+@interface BoxOfficeController : UINavigationController <WebRequestDelegate, UITableViewDelegate, UITableViewDataSource> {
 	UITableViewController *tvMovies;
 	NSMutableArray *arrayMovies;
-	EGORefreshTableHeaderView *_refreshHeaderView;
 	BOOL _reloading;
 }
 @property(nonatomic, strong) UITableViewController *tvMovies;

@@ -77,6 +77,9 @@
 }
 
 -(void)setupPhotos:(NSMutableArray *)argPhotos {
+	if([photos count] > 0) {
+		[photos removeAllObjects];
+	}
 	for (id key in argPhotos) {
 		id file_path = [key objectForKey: @"file_path"];
 		NSMutableDictionary *d = [[NSMutableDictionary alloc] init];

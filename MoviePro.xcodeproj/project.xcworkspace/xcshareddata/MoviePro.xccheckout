@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E570ACD3-B3D1-44B0-AEE6-80648DCB505D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MoviePro</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0CAAE4AC-D871-4E9E-BF3B-88B8220596B9</key>
+		<string>https://vps.gaurangjadia.com/svn</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MoviePro/trunk/MoviePro.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0CAAE4AC-D871-4E9E-BF3B-88B8220596B9</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>0CAAE4AC-D871-4E9E-BF3B-88B8220596B9</key>
+		<string>https://vps.gaurangjadia.com/svn</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://vps.gaurangjadia.com/svn/MoviePro/trunk/MoviePro.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0CAAE4AC-D871-4E9E-BF3B-88B8220596B9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0CAAE4AC-D871-4E9E-BF3B-88B8220596B9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>svn</string>
+		</dict>
+	</array>
+</dict>
+</plist>
