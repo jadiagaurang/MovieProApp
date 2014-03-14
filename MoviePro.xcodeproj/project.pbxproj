@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		451CAC9518D39510001DEF45 /* libFlurry_4.3.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C688FF18ACA8B1009F8A0B /* libFlurry_4.3.2.a */; };
 		45250EC51515770800F53ED2 /* VideoGalleryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45250EC41515770800F53ED2 /* VideoGalleryController.m */; };
 		45250EC9151585BD00F53ED2 /* YouTubeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45250EC8151585BD00F53ED2 /* YouTubeView.m */; };
 		45250ED11516B19A00F53ED2 /* g.png in Resources */ = {isa = PBXBuildFile; fileRef = 45250ECB1516B19A00F53ED2 /* g.png */; };
@@ -76,7 +77,6 @@
 		45B2D7DC1500A02C00C89F24 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45B2D7DB1500A02C00C89F24 /* settings.plist */; };
 		45C688F618AC8B12009F8A0B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C688F518AC8B12009F8A0B /* Security.framework */; };
 		45C688F818AC8B24009F8A0B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C688F718AC8B24009F8A0B /* AdSupport.framework */; };
-		45C6890018ACA8B1009F8A0B /* libFlurry_4.3.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C688FF18ACA8B1009F8A0B /* libFlurry_4.3.2.a */; };
 		45CFDFEE1510573C0099FCB3 /* PhotoGalleryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CFDFED1510573C0099FCB3 /* PhotoGalleryController.m */; };
 		45D1543115131A1200B4ECF4 /* MovieCellPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D1542F15131A1200B4ECF4 /* MovieCellPlaceholder.png */; };
 		45D1543215131A1200B4ECF4 /* MovieCellPlaceholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D1543015131A1200B4ECF4 /* MovieCellPlaceholder@2x.png */; };
@@ -223,12 +223,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				451CAC9518D39510001DEF45 /* libFlurry_4.3.2.a in Frameworks */,
 				45C688F818AC8B24009F8A0B /* AdSupport.framework in Frameworks */,
 				45C688F618AC8B12009F8A0B /* Security.framework in Frameworks */,
 				45D1545715131F3600B4ECF4 /* MapKit.framework in Frameworks */,
 				45868E6F14FCBEBB0042EE58 /* QuartzCore.framework in Frameworks */,
 				456855A414F9E27800A78EC1 /* SystemConfiguration.framework in Frameworks */,
-				45C6890018ACA8B1009F8A0B /* libFlurry_4.3.2.a in Frameworks */,
 				4568553714F76F7700A78EC1 /* UIKit.framework in Frameworks */,
 				4568553914F76F7700A78EC1 /* Foundation.framework in Frameworks */,
 				4568553B14F76F7700A78EC1 /* CoreGraphics.framework in Frameworks */,
@@ -755,8 +755,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SDKROOT)/usr/lib/system\\\"",
-					/Users/Gaurang/Documents/code.gaurangjadia.com/svn/MoviePro/trunk,
-					/Users/Gaurang/Documents/code.gaurangjadia.com/svn/MoviePro/trunk/MoviePro/AppHelper/Flurry,
+					"$(PROJECT_DIR)/MoviePro/AppHelper/Flurry",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -779,8 +778,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SDKROOT)/usr/lib/system\\\"",
-					/Users/Gaurang/Documents/code.gaurangjadia.com/svn/MoviePro/trunk,
-					/Users/Gaurang/Documents/code.gaurangjadia.com/svn/MoviePro/trunk/MoviePro/AppHelper/Flurry,
+					"$(PROJECT_DIR)/MoviePro/AppHelper/Flurry",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";

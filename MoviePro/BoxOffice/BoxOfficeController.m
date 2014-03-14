@@ -90,7 +90,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	int intCount = 0;
 	if(arrayMovies) {
-		intCount = [arrayMovies count];
+		intCount = (int)[arrayMovies count];
 	}
 	return intCount;
 }

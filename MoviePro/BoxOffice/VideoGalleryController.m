@@ -65,7 +65,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	int intCount = 0;
 	if(movie != nil) {
-		intCount = [movie.clips count];
+		intCount = (int)[movie.clips count];
 	}
 	return intCount;
 }

@@ -130,7 +130,7 @@
 	}
 	else if (section == 2) {
 		if(movie.cast) {
-			intCount = [movie.cast count];
+			intCount = (int)[movie.cast count];
 		}		
 	}
 	else if (section == 3) {

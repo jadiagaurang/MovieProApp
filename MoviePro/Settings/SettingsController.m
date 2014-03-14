@@ -103,7 +103,7 @@
 }
 
 - (void)doneClicked:(id *)sender {
-	int row = [pvSettings selectedRowInComponent:0];
+	int row = (int)[pvSettings selectedRowInComponent:0];
 	NSIndexPath *cellpath = [NSIndexPath indexPathForRow:pvSettings.tag inSection:0];
 	UITableViewCell *cell = (UITableViewCell *)[(UITableView *)tvSettings.view cellForRowAtIndexPath:cellpath];
 	
