@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		451CAC9518D39510001DEF45 /* libFlurry_4.3.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C688FF18ACA8B1009F8A0B /* libFlurry_4.3.2.a */; };
 		45250EC51515770800F53ED2 /* VideoGalleryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45250EC41515770800F53ED2 /* VideoGalleryController.m */; };
 		45250EC9151585BD00F53ED2 /* YouTubeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45250EC8151585BD00F53ED2 /* YouTubeView.m */; };
 		45250ED11516B19A00F53ED2 /* g.png in Resources */ = {isa = PBXBuildFile; fileRef = 45250ECB1516B19A00F53ED2 /* g.png */; };
@@ -189,8 +188,6 @@
 		45B2D7DB1500A02C00C89F24 /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
 		45C688F518AC8B12009F8A0B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		45C688F718AC8B24009F8A0B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		45C688FE18ACA8B1009F8A0B /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
-		45C688FF18ACA8B1009F8A0B /* libFlurry_4.3.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.3.2.a; sourceTree = "<group>"; };
 		45CFDFEC1510573C0099FCB3 /* PhotoGalleryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGalleryController.h; sourceTree = "<group>"; };
 		45CFDFED1510573C0099FCB3 /* PhotoGalleryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGalleryController.m; sourceTree = "<group>"; };
 		45D1542F15131A1200B4ECF4 /* MovieCellPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MovieCellPlaceholder.png; sourceTree = "<group>"; };
@@ -223,7 +220,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				451CAC9518D39510001DEF45 /* libFlurry_4.3.2.a in Frameworks */,
 				45C688F818AC8B24009F8A0B /* AdSupport.framework in Frameworks */,
 				45C688F618AC8B12009F8A0B /* Security.framework in Frameworks */,
 				45D1545715131F3600B4ECF4 /* MapKit.framework in Frameworks */,
@@ -477,8 +473,6 @@
 		45C688FD18ACA8B1009F8A0B /* Flurry */ = {
 			isa = PBXGroup;
 			children = (
-				45C688FE18ACA8B1009F8A0B /* Flurry.h */,
-				45C688FF18ACA8B1009F8A0B /* libFlurry_4.3.2.a */,
 			);
 			path = Flurry;
 			sourceTree = "<group>";
