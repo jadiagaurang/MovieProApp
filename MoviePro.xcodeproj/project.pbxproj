@@ -88,6 +88,7 @@
 		45D1545215131BAE00B4ECF4 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D1544915131BAE00B4ECF4 /* UIButton+WebCache.m */; };
 		45D1545315131BAE00B4ECF4 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D1544B15131BAE00B4ECF4 /* UIImageView+WebCache.m */; };
 		45D1545715131F3600B4ECF4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D1545615131F3600B4ECF4 /* MapKit.framework */; };
+		45EFD5CD19A533E20039C455 /* libFlurry_5.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EFD5CC19A533E20039C455 /* libFlurry_5.2.0.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -213,6 +214,8 @@
 		45D1544A15131BAE00B4ECF4 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		45D1544B15131BAE00B4ECF4 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		45D1545615131F3600B4ECF4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		45EFD5CB19A533E20039C455 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		45EFD5CC19A533E20039C455 /* libFlurry_5.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_5.2.0.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +228,7 @@
 				45D1545715131F3600B4ECF4 /* MapKit.framework in Frameworks */,
 				45868E6F14FCBEBB0042EE58 /* QuartzCore.framework in Frameworks */,
 				456855A414F9E27800A78EC1 /* SystemConfiguration.framework in Frameworks */,
+				45EFD5CD19A533E20039C455 /* libFlurry_5.2.0.a in Frameworks */,
 				4568553714F76F7700A78EC1 /* UIKit.framework in Frameworks */,
 				4568553914F76F7700A78EC1 /* Foundation.framework in Frameworks */,
 				4568553B14F76F7700A78EC1 /* CoreGraphics.framework in Frameworks */,
@@ -473,6 +477,8 @@
 		45C688FD18ACA8B1009F8A0B /* Flurry */ = {
 			isa = PBXGroup;
 			children = (
+				45EFD5CB19A533E20039C455 /* Flurry.h */,
+				45EFD5CC19A533E20039C455 /* libFlurry_5.2.0.a */,
 			);
 			path = Flurry;
 			sourceTree = "<group>";
